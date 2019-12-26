@@ -24,12 +24,13 @@ import 'common/event/index.dart';
 import 'common/utils/navigator_utils.dart';
 
 class FlutterReduxApp extends StatefulWidget {
+
   @override
   _FlutterReduxAppState createState() => _FlutterReduxAppState();
+
 }
 
-class _FlutterReduxAppState extends State<FlutterReduxApp>
-    with HttpErrorListener {
+class _FlutterReduxAppState extends State<FlutterReduxApp> with HttpErrorListener {
   /// 创建Store，引用 GSYState 中的 appReducer 实现 Reducer 方法
   /// initialState 初始化 State
   final store = new Store<GSYState>(
@@ -81,6 +82,7 @@ class _FlutterReduxAppState extends State<FlutterReduxApp>
               },
               LoginPage.sName: (context) {
                 _context = context;
+
                 return NavigatorUtils.pageContainer(new LoginPage());
               },
               ///使用 ModalRoute.of(context).settings.arguments; 获取参数
@@ -94,6 +96,7 @@ class _FlutterReduxAppState extends State<FlutterReduxApp>
 }
 
 mixin HttpErrorListener on State<FlutterReduxApp> {
+
   StreamSubscription stream;
 
   ///这里为什么用 _context 你理解吗？

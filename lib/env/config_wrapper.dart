@@ -21,7 +21,6 @@ class ConfigWrapper extends StatelessWidget {
   }
 
   final EnvConfig config;
-
   final Widget child;
 }
 
